@@ -1,0 +1,40 @@
+<form (submit)="GuardarCli()">
+  <input [(ngModel)]="guardado.nombre" name="nombre" placeholder="Nombre">
+  <input [(ngModel)]="guardado.dni" name="dni" placeholder="Dni">
+  <input [(ngModel)]="guardado.distrito" name="distrito" placeholder="Distrito">
+  <select [(ngModel)]="guardado.estado" name="estado">
+  <option value="true">Activo</option>
+  <option value="false">Inactivo</option>
+  </select>
+  <button type="submit">Guardar</button>
+
+</form>
+
+<table class="claseTabla">
+    
+  <thead>
+    <tr>   
+      <th> Id </th>  
+      <th> Nombre </th> 
+      <th> Dni </th> 
+      <th> Distrito </th> 
+      <th> Estado </th> 
+      <th> Accion </th> 
+    </tr>
+  </thead>
+  <tbody>
+  
+  <tr *ngFor="let chopyrata of clientes"> 
+      <td> {{chopyrata.id}}     </td>
+      <td> {{chopyrata.nombre}}     </td>
+      <td> {{chopyrata.dni}}     </td>
+      <td> {{chopyrata.distrito}}     </td>
+      <td> {{chopyrata.estado}}     </td>
+      <td><button (click)="CopiarDatosCli(chopyrata)">Modificar</button><button (click)="EliminarCli(chopyrata.id)">Eliminar</button></td>
+  </tr>
+  
+  </tbody>
+
+</table>
+
+<h1> Clientes tiene {{contar}} registros  </h1>

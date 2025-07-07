@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ArticuloComponent } from './articulo/articulo.component';   // 👈 IMPORT
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [ArticuloComponent],   // 👈 LO DECLARAMOS AQUÍ
+  template: `
+    <!-- app.component.html en línea -->
+    <app-articulo></app-articulo>
+  `,
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'informa-app';
-}
+export class AppComponent {}

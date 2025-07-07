@@ -1,1 +1,65 @@
-<p>articulo works!</p>
+<form (submit)="Guardararti()">
+  <fieldset>
+  <legend>Registrar Artículo</legend>
+  <label>Código:</label>
+  <input [(ngModel)]="guardado.mcodart" name="codigo" placeholder="Código" class="form-control" >
+  
+  <label>Descripción:</label>
+  <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control" >
+  
+  <label>Abreviado:</label>
+  <input [(ngModel)]="guardado.mabrevi" name="abreviado" placeholder="Abreviado" class="form-control" >
+  
+  <label>Tipo de Producto:</label>
+  <select [(ngModel)]="guardado.ccmtpt" name="ccmtpt" placeholder="Tipo Producto" class="form-control" >
+  <option *ngFor="let tipo of tipos" [ngValue]="tipo">{{ tipo.mcodtpt }} - {{ tipo.mdescrip }}</option>
+  </select>
+
+  <label>Código Familia:</label>
+  <select [(ngModel)]="guardado.ccmfam" name="ccmfam" placeholder="Código Familia" class="form-control" >
+  <option *ngFor="let fam of familias" [ngValue]="fam">{{ fam.mcodfam }} - {{ fam.mdescrip }}</option>
+  </select>
+
+  <label>Código Clase:</label>
+  <select [(ngModel)]="guardado.ccmcla" name="ccmcla" placeholder="Código Clase" class="form-control" >
+  <option *ngFor="let cla of clases" [ngValue]="cla">{{ cla.mcodcla }} - {{ cla.mdescrip }}</option>
+  </select>
+
+  <label>Unidad de Medida:</label>
+  <input [(ngModel)]="guardado.munidad" name="unidad" placeholder="Unidad de Medida" class="form-control" >
+  
+   <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<table class="claseTabla"> 
+  <thead>
+    <tr>   
+      <th> Código </th>  
+      <th> Descripción </th> 
+      <th> Abreviado </th> 
+      <th> Tipo Producto </th> 
+      <th> Código Familia </th> 
+      <th> Código Clase </th> 
+      <th> Unidad de Medida </th> 
+      <th> Accion </th> 
+    </tr>
+  </thead>
+  <tbody>
+  
+  <tr *ngFor="let chopyrata of articulo"> 
+      <td> {{chopyrata.mcodart}}     </td>
+      <td> {{chopyrata.mdescrip}}     </td>
+      <td> {{chopyrata.mabrevi}}     </td>
+      <td>{{ chopyrata.ccmtpt?.mdescrip }}</td>
+      <td>{{ chopyrata.ccmfam?.mdescrip }}</td>
+      <td>{{ chopyrata.ccmcla?.mdescrip }}</td>
+      <td> {{chopyrata.munidad}}     </td>
+      <td><button (click)="CopiarDatos(chopyrata)">Modificar</button>
+      <button (click)="Eliminararti(chopyrata.mcodart)">Eliminar</button>
+      </td>
+  </tr>
+  
+  </tbody>
+
+</table>

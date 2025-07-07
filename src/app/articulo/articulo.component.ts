@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { InformaService } from '../services/informa.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink }  from '@angular/router';
+
 
 // ✅ 2. INTERFACES (si son usadas solo en este archivo)
 
@@ -33,9 +35,10 @@ export interface ArticuloSave {
 @Component({
   selector: 'app-articulo',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './articulo.component.html',
   styleUrls: ['./articulo.component.scss']
+  
 })
 
 // ✅ 4. CLASE PRINCIPAL - CON ESTRUCTURA CLARA

@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { ArticuloComponent } from './articulo/articulo.component';   // 👈 IMPORT
+import { RouterOutlet } from '@angular/router';   // 👈 IMPORT
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ArticuloComponent],   // 👈 LO DECLARAMOS AQUÍ
+  imports: [RouterOutlet],   // 👈 LO DECLARAMOS AQUÍ
   template: `
-    <!-- app.component.html en línea -->
-    <app-articulo></app-articulo>
+    <router-outlet></router-outlet>  <!-- ✅ Esto reemplaza al <app-articulo> -->
+
   `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {}
+

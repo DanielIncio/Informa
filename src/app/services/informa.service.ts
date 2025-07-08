@@ -44,28 +44,9 @@ export class InformaService {
     return this.http.put(this.apiurl +"/api/clientes", Clientes)
    }
 
-
-
   Count(){
     return this.http.get(this.apiurl +"/api/clientes/count")
   }
-
-  Listararti() {
-    return this.http.get(this.apiurl +"/api/articulo")
-
-  }
-   
-   Guardararti(Articulo:any) {
-    return this.http.post(this.apiurl +"/api/articulo", Articulo)
-   }
-
-   Eliminararti(mcodart:any){
-    return this.http.delete(this.apiurl +"/api/articulo/"+mcodart ) 
-   }
-
-   Modificararti(Articulo:any){
-    return this.http.put(this.apiurl +"/api/articulo", Articulo)
-   }
 
    ListarFamilias() {
   return this.http.get<any[]>(this.apiurl +"/api/ccmfam");

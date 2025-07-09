@@ -20,10 +20,10 @@
   <input [(ngModel)]="guardado.mcoduser" name="codigo usuario" placeholder="Codigo Usuario" class="form-control" >
 
   <label>Fecha:</label>
-  <input [(ngModel)]="guardado.mfecuact" name="fecha" placeholder="Fecha" class="form-control" >
+  <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" placeholder="Fecha" class="form-control" >
 
   <label>Hora:</label>
-  <input [(ngModel)]="guardado.mhoruact" name="hora" placeholder="Hora" class="form-control" >
+  <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" placeholder="Hora" class="form-control" >
   
    <button type="submit">Guardar</button>
   </fieldset>

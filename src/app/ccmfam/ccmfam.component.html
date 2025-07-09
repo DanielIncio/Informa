@@ -1,1 +1,66 @@
-<p>ccmfam works!</p>
+<form (submit)="Guardarccmfam()">
+  <fieldset>
+  <legend>Registrar Tipo Familia</legend>
+  <label>Código:</label>
+  <input [(ngModel)]="guardado.mcodfam" name="codigo" placeholder="Código" class="form-control" >
+  
+  <label>Descripción:</label>
+  <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control" >
+  
+  <label>Abreviado:</label>
+  <input [(ngModel)]="guardado.mabrevi" name="abreviado" placeholder="Abreviado" class="form-control" >
+
+  <label>Codigo Tipo Producto:</label>
+  <input [(ngModel)]="guardado.mcodtpt" name="tipo producto" placeholder="Tipo Producto" class="form-control" >
+
+  <label>Codigo Usuario:</label>
+  <input [(ngModel)]="guardado.mcoduser" name="codigo usuario" placeholder="Codigo Usuario" class="form-control" >
+
+  <label>Fecha:</label>
+  <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" placeholder="Fecha" class="form-control" >
+
+  <label>Hora:</label>
+  <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" placeholder="Hora" class="form-control" >
+
+  <label>Nombre:</label>
+  <input [(ngModel)]="guardado.mnombre" name="nombre" placeholder="Nombre" class="form-control" >
+  
+   <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<table class="claseTabla"> 
+  <thead>
+    <tr>   
+      <th> Código </th>  
+      <th> Descripción </th> 
+      <th> Abreviado </th> 
+      <th> Tipo de Producto </th> 
+      <th> Código Usuario </th> 
+      <th> Fecha </th> 
+      <th> Hora </th>
+      <th> Nombre </th>  
+      <th> Accion </th> 
+    </tr>
+  </thead>
+  <tbody>
+  
+  <tr *ngFor="let chopyrata of ccmfam"> 
+      <td> {{chopyrata.mcodfam}}     </td>
+      <td> {{chopyrata.mdescrip}}     </td>
+      <td> {{chopyrata.mabrevi}}     </td>
+      <td> {{chopyrata.mcodtpt}}     </td>
+      <td> {{chopyrata.mcoduser}}    </td>
+      <td> {{chopyrata.mfecuact}}    </td>
+      <td> {{chopyrata.mhoruact}}    </td>
+      <td> {{chopyrata.mnombre}}     </td>
+      <td><button (click)="CopiarDatos(chopyrata)">Modificar</button>
+      <button (click)="Eliminarccmfam(chopyrata.mcodfam)">Eliminar</button>
+      </td>
+  </tr>
+  
+  <button routerLink="/">🔙 Volver al inicio</button>
+
+  </tbody>
+
+</table>

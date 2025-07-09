@@ -5,6 +5,6 @@ export interface Ccmcla {
   mcodtpt: string;
   mcodfam: string;
   mcoduser: string;
-  mfecuact: string;
+  mfecuact: String;
   mhoruact: string;
 }

@@ -24,11 +24,22 @@ export class CcmclaComponent {
       ){}
       ngOnInit(){
       this.Listarccmcla();
+      this.ccmclaService.list().subscribe(res => {
+      this.ccmcla = res.map(c => ({
+      ...c,
+      mfecuact: c.mfecuact?.substring(0, 10) ?? ''
+       }));
+      });
   
       }
 
       Listarccmcla(){
-        this.ccmclaService.list().subscribe(res => this.ccmcla = res);
+        this.ccmclaService.list().subscribe(res => {
+        this.ccmcla = res.map(c => ({
+        ...c,
+        mfecuact: c.mfecuact?.substring(0, 10) ?? ''
+      }));
+    });
 
       }
 
@@ -41,8 +52,8 @@ export class CcmclaComponent {
       });
       }
   
-     Eliminarccmcla(mcodart:any){
-        this.ccmclaService.delete(mcodart).subscribe(() => this.Listarccmcla());
+     Eliminarccmcla(mcodcla:any){
+        this.ccmclaService.delete(mcodcla).subscribe(() => this.Listarccmcla());
       }
   
       Modificarccmcla() {
@@ -52,7 +63,12 @@ export class CcmclaComponent {
       });
       }
   
-      CopiarDatos(fila: any) {
+      CopiarDatos(fila: Ccmcla) {
+      this.guardado = { ...fila };
+      }   
+      
+      // 4.5. 🔒 Funciones privadas o auxiliares (con `private`)
+      private resetForm(): void {
       this.guardado = {
        mcodcla:"",
        mdescrip:"",
@@ -63,23 +79,13 @@ export class CcmclaComponent {
        mfecuact:"",
        mhoruact:""
       }
-    }
-
-    // 4.5. 🔒 Funciones privadas o auxiliares (con `private`)
-
-    private resetForm(): void {
-    this.guardado = {
-       mcodcla:"",
-       mdescrip:"",
-       mabrevi:"",
-       mcodtpt:"",
-       mcodfam:"",
-       mcoduser:"",
-       mfecuact:"",
-       mhoruact:""
       }
     }
 
-}
+
+
+    
+
+
 
 

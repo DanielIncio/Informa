@@ -1,6 +1,20 @@
-<h1>Módulo Principal</h1>
-
-<button routerLink="/articulos">📝 Artículos</button>
-<button routerLink="/tipos">🏷️ Tipos</button>
-<button routerLink="/familias">📦 Familias</button>
-<button routerLink="/clases">📚 Clases</button>
+<div class="container text-center mt-5">
+  <h2 class="mb-4 text-primary">¡Bienvenido a INFORMA!</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <a routerLink="/articulos" class="btn btn-outline-primary w-100 py-3">
+        <i class="bi bi-box-seam me-2"></i> Ir a Artículos
+      </a>
+    </div>
+    <div class="col">
+      <a routerLink="/familias" class="btn btn-outline-primary w-100 py-3">
+        <i class="bi bi-tags me-2"></i> Ir a Familias
+      </a>
+    </div>
+    <div class="col">
+      <a routerLink="/tipos" class="btn btn-outline-primary w-100 py-3">
+        <i class="bi bi-grid me-2"></i> Ir a Tipos
+      </a>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,21 @@ form {
 
 /* Estilo para el recuadro del formulario */
 fieldset {
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
+  border: 2px solid #ccc;
+  padding: 30px;
+  border-radius: 20px;
   max-width: 600px;
+  font-size: 1.1rem;
+}
+
+/* Reducir espacio vertical entre los elementos dentro del fieldset */
+fieldset > * {
+  margin-bottom: 8px; /* ajusta este valor para más/menos espacio */
+}
+
+/* Ajustar padding del input */
+fieldset input {
+  padding: 6 8px; /* antes podía ser más alto */
 }
 
 /* Estilo para las etiquetas */
@@ -23,11 +34,12 @@ input.form-control,
 select.form-control {
   width: 100%;
   padding: 6px;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: 10px;
   border: 1px solid #aaa;
   border-radius: 5px;
   box-sizing: border-box;
+
 }
 
 /* Botón de guardar */
@@ -76,7 +88,28 @@ table.claseTabla button {
   cursor: pointer;
 }
 
-table.claseTabla button:hover {
-  background-color: #bdbdbd;
-}
+.form-floating {
+  margin: 0;             // sin margen externo
+  height: auto;          // altura ajustada al contenido
   
+}
+
+.form-floating > .form-control {
+  height: 2.2rem;        // más bajo que el default
+  padding-top: 0.8rem;   // menos espacio arriba
+  padding-bottom: 0.1rem;
+  font-size: 1.0rem;    // texto más compacto
+}
+
+.form-floating > label {
+  
+  padding: 0 4px;       // menos ancho en el label
+  height: auto;
+  line-height: 1.2rem;
+}
+
+.form-floating > .form-control:focus + label,
+.form-floating > .form-control:not(:placeholder-shown) + label {
+  font-size: 0.90rem;
+  transform: translateY(-0.3rem); // sube el label justo lo necesario
+}

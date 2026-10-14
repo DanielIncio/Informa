@@ -18,7 +18,13 @@ export const routes: Routes = [
   { path: 'articulos', loadComponent: () => import('./articulo/articulo.component').then(m => m.ArticuloComponent) },
   { path: 'tipos', loadComponent: () => import('./ccmtpt/ccmtpt.component').then(m => m.CcmtptComponent) },
   { path: 'familias', loadComponent: () => import('./ccmfam/ccmfam.component').then(m => m.CcmfamComponent) },
-  { path: 'clases', loadComponent: () => import('./ccmcla/ccmcla.component').then(m => m.CcmclaComponent) }
+  { path: 'clases', loadComponent: () => import('./ccmcla/ccmcla.component').then(m => m.CcmclaComponent) },
+  { path: 'almacenes', loadComponent: () => import('./ccmalm/ccmalm.component').then(m => m.CcmalmComponent) },
+  { path: 'ccmtip', loadComponent: () => import('./ccmtip/ccmtip.component').then(m => m.CcmtipComponent) },
+  { path: 'ccmtrs', loadComponent: () => import('./ccmtrs/ccmtrs.component').then(m => m.CcmtrsComponent) },
+  { path: 'ccmven', loadComponent: () => import('./ccmven/ccmven.component').then(m => m.CcmvenComponent) },
+  { path: 'cpmcos', loadComponent: () => import('./cpmcos/cpmcos.component').then(m => m.CpmcosComponent) },
+  { path: 'inmuni', loadComponent: () => import('./inmuni/inmuni.component').then(m => m.InmuniComponent) }
   // Si no usás HomeComponent todavía, podés dejarlo comentado o eliminar esta línea:
   // { path: '', component: HomeComponent },
     ],

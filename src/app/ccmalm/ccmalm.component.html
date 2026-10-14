@@ -1,0 +1,84 @@
+<form (submit)="Guardarccmalm()">
+  <fieldset>
+    <legend>Registrar Almacén</legend>
+
+    <label>Código:</label>
+    <input [(ngModel)]="guardado.mcodalm" name="codigo" placeholder="Código" class="form-control">
+
+    <label>Descripción:</label>
+    <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control">
+
+    <label>Dirección:</label>
+    <input [(ngModel)]="guardado.mdirecc" name="direccion" placeholder="Dirección" class="form-control">
+
+    <label>Código Usuario:</label>
+    <input [(ngModel)]="guardado.mcoduser" name="codigoUsuario" placeholder="Código Usuario" class="form-control">
+
+    <label>Fecha:</label>
+    <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" class="form-control">
+
+    <label>Hora:</label>
+    <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" class="form-control">
+
+    <label>Indica Ubigeo:</label>
+    <input [(ngModel)]="guardado.mindubi" name="indubi" placeholder="Indica Ubigeo" class="form-control">
+
+    <label>Indica Disponible:</label>
+    <input [(ngModel)]="guardado.mindisp" name="indisp" placeholder="Indica Disponible" class="form-control">
+
+    <label>Indica Depreciación:</label>
+    <input [(ngModel)]="guardado.minddpr" name="inddpr" placeholder="Indica Depreciación" class="form-control">
+
+    <label>Indica Pase:</label>
+    <input [(ngModel)]="guardado.mindpase" name="indpase" placeholder="Indica Pase" class="form-control">
+
+    <label>Situación:</label>
+    <input [(ngModel)]="guardado.msituac" name="situacion" placeholder="Situación" class="form-control">
+
+    <label>Indica Activo:</label>
+    <input [(ngModel)]="guardado.mindica" name="indica" placeholder="Indica Activo" class="form-control">
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Dirección</th>
+      <th>Código Usuario</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Ubigeo</th>
+      <th>Disponible</th>
+      <th>Depreciación</th>
+      <th>Pase</th>
+      <th>Situación</th>
+      <th>Activo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let almacen of ccmalm">
+      <td>{{ almacen.mcodalm }}</td>
+      <td>{{ almacen.mdescrip }}</td>
+      <td>{{ almacen.mdirecc }}</td>
+      <td>{{ almacen.mcoduser }}</td>
+      <td>{{ almacen.mfecuact }}</td>
+      <td>{{ almacen.mhoruact }}</td>
+      <td>{{ almacen.mindubi }}</td>
+      <td>{{ almacen.mindisp }}</td>
+      <td>{{ almacen.minddpr }}</td>
+      <td>{{ almacen.mindpase }}</td>
+      <td>{{ almacen.msituac }}</td>
+      <td>{{ almacen.mindica }}</td>
+      <td>
+        <button (click)="CopiarDatos(almacen)">Modificar</button>
+        <button (click)="Eliminarccmalm(almacen.mcodalm)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button routerLink="/">🔙 Volver al inicio</button>

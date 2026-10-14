@@ -1,0 +1,83 @@
+/* Estilo para el formulario */
+form {
+  margin-bottom: 20px;
+}
+
+/* Estilo para el recuadro del formulario */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+/* Estilo para las etiquetas */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Estilo para los inputs y selects */
+input.form-control,
+select.form-control {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Botón de guardar */
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #145ea8;
+}
+
+/* Estilo general para la tabla */
+table.claseTabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Encabezado de la tabla */
+table.claseTabla th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Celdas de la tabla */
+table.claseTabla td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  
+}
+
+/* Botones dentro de la tabla */
+table.claseTabla button {
+  margin-right: 5px;
+  padding: 4px 10px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table.claseTabla button:hover {
+  background-color: #bdbdbd;
+}
+  

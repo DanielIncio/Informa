@@ -1,0 +1,67 @@
+<form (submit)="Guardarcpmcos()">
+  <fieldset>
+    <legend>Registrar Centro de Costo</legend>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 45%;">
+        <label>Código:</label>
+        <input [(ngModel)]="guardado.mcodcos" name="mcodcos" placeholder="Código" class="form-control">
+
+        <label>Descripción:</label>
+        <input [(ngModel)]="guardado.mdescrip" name="mdescrip" placeholder="Descripción" class="form-control">
+
+        <label>Abreviatura:</label>
+        <input [(ngModel)]="guardado.mabrevi" name="mabrevi" placeholder="Abreviatura" class="form-control">
+
+        <label>Indicador Modificable:</label>
+        <input [(ngModel)]="guardado.mindmod" name="mindmod" placeholder="Modificable" class="form-control">
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label>Código Usuario:</label>
+        <input [(ngModel)]="guardado.mcoduser" name="mcoduser" placeholder="Código Usuario" class="form-control">
+
+        <label>Fecha Actualización:</label>
+        <input type="date" [(ngModel)]="guardado.mfecuact" name="mfecuact" class="form-control">
+
+        <label>Hora Actualización:</label>
+        <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="mhoruact" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<!-- Tabla de datos -->
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Abreviatura</th>
+      <th>Modificable</th>
+      <th>Usuario</th>
+      <th>Fecha Act.</th>
+      <th>Hora Act.</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cpmcos">
+      <td>{{ item.mcodcos }}</td>
+      <td>{{ item.mdescrip }}</td>
+      <td>{{ item.mabrevi }}</td>
+      <td>{{ item.mindmod }}</td>
+      <td>{{ item.mcoduser }}</td>
+      <td>{{ item.mfecuact }}</td>
+      <td>{{ item.mhoruact }}</td>
+      <td>
+        <button (click)="CopiarDatos(item)">Modificar</button>
+        <button (click)="Eliminarcpmcos(item.mcodcos)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de retorno -->
+<button routerLink="/">🔙 Volver al inicio</button>

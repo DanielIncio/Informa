@@ -1,0 +1,112 @@
+<form (submit)="Guardarccmven()">
+  <fieldset>
+    <legend>Registrar Vendedor</legend>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 45%;">
+        <label>Código Vendedor:</label>
+        <input [(ngModel)]="guardado.mcodven" name="mcodven" placeholder="Código Vendedor" class="form-control">
+
+        <label>Nombre:</label>
+        <input [(ngModel)]="guardado.mnombre" name="mnombre" placeholder="Nombre" class="form-control">
+
+        <label>Dirección:</label>
+        <input [(ngModel)]="guardado.mdirecc" name="mdirecc" placeholder="Dirección" class="form-control">
+
+        <label>Documento de Identidad:</label>
+        <input [(ngModel)]="guardado.mdociden" name="mdociden" placeholder="Documento de Identidad" class="form-control">
+
+        <label>Porcentaje:</label>
+        <input type="number" [(ngModel)]="guardado.mporcen" name="mporcen" placeholder="Porcentaje" class="form-control">
+
+        <label>Tipo de Vendedor:</label>
+        <input [(ngModel)]="guardado.mtipven" name="mtipven" placeholder="Tipo de Vendedor" class="form-control">
+
+        <label>Código Grupo Vendedor:</label>
+        <input [(ngModel)]="guardado.mcodgve" name="mcodgve" placeholder="Grupo Vendedor" class="form-control">
+
+        <label>Código Jerarquía Vendedor:</label>
+        <input [(ngModel)]="guardado.mcodjve" name="mcodjve" placeholder="Jerarquía Vendedor" class="form-control">
+
+        <label>Fecha Comisión:</label>
+        <input [(ngModel)]="guardado.mfcacomi" name="mfcacomi" placeholder="Fecha Comisión" class="form-control">
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label>Código Usuario:</label>
+        <input [(ngModel)]="guardado.mcoduser" name="mcoduser" placeholder="Código Usuario" class="form-control">
+
+        <label>Fecha Actualización:</label>
+        <input type="date" [(ngModel)]="guardado.mfecuact" name="mfecuact" class="form-control">
+
+        <label>Hora Actualización:</label>
+        <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="mhoruact" class="form-control">
+
+        <label>Indicador Comisión:</label>
+        <input [(ngModel)]="guardado.mindcom" name="mindcom" placeholder="Indicador Comisión" class="form-control">
+
+        <label>Indicador Vendedor:</label>
+        <input [(ngModel)]="guardado.mindvend" name="mindvend" placeholder="Indicador Vendedor" class="form-control">
+
+        <label>Situación:</label>
+        <input [(ngModel)]="guardado.msituac" name="msituac" placeholder="Situación" class="form-control">
+
+        <label>Clave:</label>
+        <input [(ngModel)]="guardado.mclave" name="mclave" placeholder="Clave" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<!-- Tabla de datos -->
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Doc. Identidad</th>
+      <th>Porcentaje</th>
+      <th>Tipo Vendedor</th>
+      <th>Grupo Vendedor</th>
+      <th>Jerarquía</th>
+      <th>Fecha Comisión</th>
+      <th>Usuario</th>
+      <th>Fecha Act.</th>
+      <th>Hora Act.</th>
+      <th>Ind. Comisión</th>
+      <th>Ind. Vendedor</th>
+      <th>Situación</th>
+      <th>Clave</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chopyrata of ccmven">
+      <td>{{ chopyrata.mcodven }}</td>
+      <td>{{ chopyrata.mnombre }}</td>
+      <td>{{ chopyrata.mdirecc }}</td>
+      <td>{{ chopyrata.mdociden }}</td>
+      <td>{{ chopyrata.mporcen }}</td>
+      <td>{{ chopyrata.mtipven }}</td>
+      <td>{{ chopyrata.mcodgve }}</td>
+      <td>{{ chopyrata.mcodjve }}</td>
+      <td>{{ chopyrata.mfcacomi }}</td>
+      <td>{{ chopyrata.mcoduser }}</td>
+      <td>{{ chopyrata.mfecuact }}</td>
+      <td>{{ chopyrata.mhoruact }}</td>
+      <td>{{ chopyrata.mindcom }}</td>
+      <td>{{ chopyrata.mindvend }}</td>
+      <td>{{ chopyrata.msituac }}</td>
+      <td>{{ chopyrata.mclave }}</td>
+      <td>
+        <button (click)="CopiarDatos(chopyrata)">Modificar</button>
+        <button (click)="Eliminarccmven(chopyrata.mcodven)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de retorno -->
+<button routerLink="/">🔙 Volver al inicio</button>

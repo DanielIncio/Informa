@@ -48,7 +48,7 @@ export class InformaService {
     return this.http.get(this.apiurl +"/api/clientes/count")
   }
 
-   ListarFamilias() {
+  ListarFamilias() {
   return this.http.get<any[]>(this.apiurl +"/api/ccmfam");
   }
 
@@ -60,7 +60,29 @@ export class InformaService {
   return this.http.get<any[]>(this.apiurl +"/api/ccmcla");
   }
 
-  
+  ListarAlm() {
+  return this.http.get<any[]>(this.apiurl +"/api/ccmalm");
+  }
+
+  ListarTip() {
+  return this.http.get<any[]>(this.apiurl +"/api/ccmtip");
+  }
+
+  ListarTrs() {
+  return this.http.get<any[]>(this.apiurl +"/api/ccmtrs");
+  }
+
+  ListarVen() {
+  return this.http.get<any[]>(this.apiurl +"/api/ccmven");
+  }
+
+  ListarCos() {
+  return this.http.get<any[]>(this.apiurl +"/api/cpmcos");
+  }
+
+  ListarInmuni() {
+  return this.http.get<any[]>(this.apiurl +"/api/inmuni");
+  }
 
 
 }

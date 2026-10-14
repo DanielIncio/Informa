@@ -1,0 +1,142 @@
+<form (submit)="Guardarccmtrs()">
+  <fieldset>
+    <legend>Registrar Transportista</legend>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 45%;">
+        <label>Código Transportista:</label>
+        <input [(ngModel)]="guardado.mcodtrsp" name="mcodtrsp" placeholder="Código" class="form-control">
+
+        <label>Nombre:</label>
+        <input [(ngModel)]="guardado.mnombre" name="mnombre" placeholder="Nombre" class="form-control">
+
+        <label>Dirección:</label>
+        <input [(ngModel)]="guardado.mdirecc" name="mdirecc" placeholder="Dirección" class="form-control">
+
+        <label>Teléfono 1:</label>
+        <input [(ngModel)]="guardado.mtelef1" name="mtelef1" placeholder="Teléfono 1" class="form-control">
+
+        <label>Teléfono 2:</label>
+        <input [(ngModel)]="guardado.mtelef2" name="mtelef2" placeholder="Teléfono 2" class="form-control">
+
+        <label>Fax:</label>
+        <input [(ngModel)]="guardado.mfax" name="mfax" placeholder="Fax" class="form-control">
+
+        <label>Código País:</label>
+        <input [(ngModel)]="guardado.mcodpai" name="mcodpai" placeholder="Código País" class="form-control">
+
+        <label>Persona:</label>
+        <input [(ngModel)]="guardado.mpersona" name="mpersona" placeholder="Persona" class="form-control">
+
+        <label>RUC:</label>
+        <input [(ngModel)]="guardado.mructrsp" name="mructrsp" placeholder="RUC" class="form-control">
+
+        <label>Fecha Registro:</label>
+        <input [(ngModel)]="guardado.mfchregis" name="mfchregis" placeholder="Fecha Registro" class="form-control">
+
+        <label>Placa:</label>
+        <input [(ngModel)]="guardado.mplaca" name="mplaca" placeholder="Placa" class="form-control">
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label>Capacidad:</label>
+        <input [(ngModel)]="guardado.mcapaci" name="mcapaci" placeholder="Capacidad" class="form-control">
+
+        <label>Chofer:</label>
+        <input [(ngModel)]="guardado.mchofer" name="mchofer" placeholder="Chofer" class="form-control">
+
+        <label>Código Usuario:</label>
+        <input [(ngModel)]="guardado.mcoduser" name="mcoduser" placeholder="Código Usuario" class="form-control">
+
+        <label>Fecha Actualización:</label>
+        <input type="date" [(ngModel)]="guardado.mfecuact" name="mfecuact" class="form-control">
+
+        <label>Hora Actualización:</label>
+        <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="mhoruact" class="form-control">
+
+        <label>Código CVE:</label>
+        <input [(ngModel)]="guardado.mcodcve" name="mcodcve" placeholder="Código CVE" class="form-control">
+
+        <label>Código UTR:</label>
+        <input [(ngModel)]="guardado.mcodutr" name="mcodutr" placeholder="Código UTR" class="form-control">
+
+        <label>Localidad:</label>
+        <input [(ngModel)]="guardado.mlocalid" name="mlocalid" placeholder="Localidad" class="form-control">
+
+        <label>Activo:</label>
+        <input [(ngModel)]="guardado.mindact" name="mindact" placeholder="Activo" class="form-control">
+
+        <label>Tipo Sunat:</label>
+        <input [(ngModel)]="guardado.mtiptrsunat" name="mtiptrsunat" placeholder="Tipo SUNAT" class="form-control">
+
+        <label>Ubigeo:</label>
+        <input [(ngModel)]="guardado.mubigeo" name="mubigeo" placeholder="Ubigeo" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<!-- Tabla de datos -->
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Teléfono 1</th>
+      <th>Teléfono 2</th>
+      <th>Fax</th>
+      <th>País</th>
+      <th>Persona</th>
+      <th>RUC</th>
+      <th>Fecha Registro</th>
+      <th>Placa</th>
+      <th>Capacidad</th>
+      <th>Chofer</th>
+      <th>Usuario</th>
+      <th>Fecha Act.</th>
+      <th>Hora Act.</th>
+      <th>CVE</th>
+      <th>UTR</th>
+      <th>Localidad</th>
+      <th>Activo</th>
+      <th>Tipo SUNAT</th>
+      <th>Ubigeo</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chopyrata of ccmtrs">
+      <td>{{chopyrata.mcodtrsp}}</td>
+      <td>{{chopyrata.mnombre}}</td>
+      <td>{{chopyrata.mdirecc}}</td>
+      <td>{{chopyrata.mtelef1}}</td>
+      <td>{{chopyrata.mtelef2}}</td>
+      <td>{{chopyrata.mfax}}</td>
+      <td>{{chopyrata.mcodpai}}</td>
+      <td>{{chopyrata.mpersona}}</td>
+      <td>{{chopyrata.mructrsp}}</td>
+      <td>{{chopyrata.mfchregis}}</td>
+      <td>{{chopyrata.mplaca}}</td>
+      <td>{{chopyrata.mcapaci}}</td>
+      <td>{{chopyrata.mchofer}}</td>
+      <td>{{chopyrata.mcoduser}}</td>
+      <td>{{chopyrata.mfecuact}}</td>
+      <td>{{chopyrata.mhoruact}}</td>
+      <td>{{chopyrata.mcodcve}}</td>
+      <td>{{chopyrata.mcodutr}}</td>
+      <td>{{chopyrata.mlocalid}}</td>
+      <td>{{chopyrata.mindact}}</td>
+      <td>{{chopyrata.mtiptrsunat}}</td>
+      <td>{{chopyrata.mubigeo}}</td>
+      <td>
+        <button (click)="CopiarDatos(chopyrata)">Modificar</button>
+        <button (click)="Eliminarccmtrs(chopyrata.mcodtrsp)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de retorno -->
+<button routerLink="/">🔙 Volver al inicio</button>

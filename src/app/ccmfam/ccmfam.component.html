@@ -1,31 +1,54 @@
 <form (submit)="Guardarccmfam()">
   <fieldset>
-  <legend>Registrar Tipo Familia</legend>
-  <label>Código:</label>
-  <input [(ngModel)]="guardado.mcodfam" name="codigo" placeholder="Código" class="form-control" >
-  
-  <label>Descripción:</label>
-  <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control" >
-  
-  <label>Abreviado:</label>
-  <input [(ngModel)]="guardado.mabrevi" name="abreviado" placeholder="Abreviado" class="form-control" >
+    <legend>Registrar Tipo Familia</legend>
+ 
+    <div class="form-floating">
+    <input 
+    type="text" 
+    class="form-control" 
+    id="codigo"  
+    placeholder=" "
+    [(ngModel)]="guardado.mcodfam" 
+    name="codigo">
+    <label for="codigo">Código</label>
+    </div>
 
-  <label>Codigo Tipo Producto:</label>
-  <input [(ngModel)]="guardado.mcodtpt" name="tipo producto" placeholder="Tipo Producto" class="form-control" >
+    <div class="mb-3">
+      <label>Descripción:</label>
+      <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control">
+    </div>
 
-  <label>Codigo Usuario:</label>
-  <input [(ngModel)]="guardado.mcoduser" name="codigo usuario" placeholder="Codigo Usuario" class="form-control" >
+    <div class="mb-3">
+      <label>Abreviado:</label>
+      <input [(ngModel)]="guardado.mabrevi" name="abreviado" placeholder="Abreviado" class="form-control">
+    </div>
 
-  <label>Fecha:</label>
-  <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" placeholder="Fecha" class="form-control" >
+    <div class="mb-3">
+      <label>Código Tipo Producto:</label>
+      <input [(ngModel)]="guardado.mcodtpt" name="tipo producto" placeholder="Tipo Producto" class="form-control">
+    </div>
 
-  <label>Hora:</label>
-  <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" placeholder="Hora" class="form-control" >
+    <div class="mb-3">
+      <label>Código Usuario:</label>
+      <input [(ngModel)]="guardado.mcoduser" name="codigo usuario" placeholder="Codigo Usuario" class="form-control">
+    </div>
 
-  <label>Nombre:</label>
-  <input [(ngModel)]="guardado.mnombre" name="nombre" placeholder="Nombre" class="form-control" >
-  
-   <button type="submit">Guardar</button>
+    <div class="mb-3">
+      <label>Fecha:</label>
+      <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Hora:</label>
+      <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Nombre:</label>
+      <input [(ngModel)]="guardado.mnombre" name="nombre" placeholder="Nombre" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
   </fieldset>
 </form>
 

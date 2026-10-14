@@ -1,0 +1,72 @@
+<form (submit)="Guardarinmuni()">
+  <fieldset>
+    <legend>Registrar Unidad de Medida</legend>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 45%;">
+        <label>Código:</label>
+        <input [(ngModel)]="guardado.mcodumed" name="mcodumed" placeholder="Código" class="form-control">
+
+        <label>Descripción:</label>
+        <input [(ngModel)]="guardado.mdescrip" name="mdescrip" placeholder="Descripción" class="form-control">
+
+        <label>Abreviatura:</label>
+        <input [(ngModel)]="guardado.mabrevi" name="mabrevi" placeholder="Abreviatura" class="form-control">
+
+        <label>Factor:</label>
+        <input [(ngModel)]="guardado.mfactor" name="mfactor" placeholder="Factor" class="form-control">
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label>Porcentaje:</label>
+        <input [(ngModel)]="guardado.mporcen" name="mporcen" placeholder="Porcentaje" class="form-control">
+
+        <label>Unidad:</label>
+        <input [(ngModel)]="guardado.munidad" name="munidad" placeholder="Unidad" class="form-control">
+
+        <label>Serie Interna:</label>
+        <input [(ngModel)]="guardado.msnr_ume" name="msnr_ume" placeholder="Serie Interna" class="form-control">
+
+        <label>Serie Externa:</label>
+        <input [(ngModel)]="guardado.msnt_umext" name="msnt_umext" placeholder="Serie Externa" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<!-- Tabla de datos -->
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Abreviatura</th>
+      <th>Factor</th>
+      <th>Porcentaje</th>
+      <th>Unidad</th>
+      <th>Serie Int.</th>
+      <th>Serie Ext.</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of inmuni">
+      <td>{{ item.mcodumed }}</td>
+      <td>{{ item.mdescrip }}</td>
+      <td>{{ item.mabrevi }}</td>
+      <td>{{ item.mfactor }}</td>
+      <td>{{ item.mporcen }}</td>
+      <td>{{ item.munidad }}</td>
+      <td>{{ item.msnr_ume }}</td>
+      <td>{{ item.msnt_umext }}</td>
+      <td>
+        <button (click)="CopiarDatos(item)">Modificar</button>
+        <button (click)="Eliminarinmuni(item.mcodumed)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de retorno -->
+<button routerLink="/">🔙 Volver al inicio</button>

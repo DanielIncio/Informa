@@ -1,0 +1,142 @@
+<form (submit)="Guardarccmtip()">
+  <fieldset>
+    <legend>Registrar Tipo de Transacción</legend>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 45%;">
+        <label>Tipo Transacción:</label>
+        <input [(ngModel)]="guardado.mtipotran" name="tipotrans" placeholder="Tipo" class="form-control">
+
+        <label>Descripción:</label>
+        <input [(ngModel)]="guardado.mdescrip" name="descripcion" placeholder="Descripción" class="form-control">
+
+        <label>Abreviado:</label>
+        <input [(ngModel)]="guardado.mabrevi" name="abreviado" placeholder="Abreviado" class="form-control">
+
+        <label>Ing/Sal:</label>
+        <input [(ngModel)]="guardado.mingsal" name="ingsal" placeholder="Ingreso o Salida" class="form-control">
+
+        <label>Valor:</label>
+        <input [(ngModel)]="guardado.mindvalor" name="valor" placeholder="Valor" class="form-control">
+
+        <label>Cantidad:</label>
+        <input [(ngModel)]="guardado.mindcanti" name="cantidad" placeholder="Cantidad" class="form-control">
+
+        <label>Relac:</label>
+        <input [(ngModel)]="guardado.mindrelac" name="relac" placeholder="Relación" class="form-control">
+
+        <label>Transferencia:</label>
+        <input [(ngModel)]="guardado.mindtrnsf" name="transferencia" placeholder="Transferencia" class="form-control">
+
+        <label>Sunat:</label>
+        <input [(ngModel)]="guardado.mindsunat" name="sunat" placeholder="Sunat" class="form-control">
+
+        <label>Transferencia R:</label>
+        <input [(ngModel)]="guardado.mttransr" name="transr" placeholder="Transferencia R" class="form-control">
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label>Operación:</label>
+        <input [(ngModel)]="guardado.mindoper" name="operacion" placeholder="Operación" class="form-control">
+
+        <label>Cliente:</label>
+        <input [(ngModel)]="guardado.mindcclte" name="cliente" placeholder="Cliente" class="form-control">
+
+        <label>Controla:</label>
+        <input [(ngModel)]="guardado.mindctrla" name="controla" placeholder="Controla" class="form-control">
+
+        <label>Aceptación:</label>
+        <input [(ngModel)]="guardado.mindacp" name="acepta" placeholder="Acepta" class="form-control">
+
+        <label>Código Sunat:</label>
+        <input [(ngModel)]="guardado.mcodsunat" name="codsunat" placeholder="Código Sunat" class="form-control">
+
+        <label>Descripción Sunat:</label>
+        <input [(ngModel)]="guardado.mdessunat" name="dessunat" placeholder="Descripción Sunat" class="form-control">
+
+        <label>Código Usuario:</label>
+        <input [(ngModel)]="guardado.mcoduser" name="coduser" placeholder="Código Usuario" class="form-control">
+
+        <label>TOA:</label>
+        <input [(ngModel)]="guardado.msnt_toa" name="toa" placeholder="TOA" class="form-control">
+
+        <label>Autorización:</label>
+        <input [(ngModel)]="guardado.mindautis" name="autorizacion" placeholder="Autorización" class="form-control">
+
+        <label>Fecha:</label>
+        <input type="date" [(ngModel)]="guardado.mfecuact" name="fecha" class="form-control">
+
+        <label>Hora:</label>
+        <input type="time" step="1" [(ngModel)]="guardado.mhoruact" name="hora" class="form-control">
+
+        <label>Indicador:</label>
+        <input [(ngModel)]="guardado.mindica" name="indicador" placeholder="Indicador" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </fieldset>
+</form>
+
+<!-- Tabla para mostrar los registros -->
+<table class="claseTabla">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripción</th>
+      <th>Abreviado</th>
+      <th>Ing/Sal</th>
+      <th>Valor</th>
+      <th>Cantidad</th>
+      <th>Relac</th>
+      <th>Transferencia</th>
+      <th>Sunat</th>
+      <th>Transferencia R</th>
+      <th>Operación</th>
+      <th>Cliente</th>
+      <th>Controla</th>
+      <th>Aceptación</th>
+      <th>Código Sunat</th>
+      <th>Desc. Sunat</th>
+      <th>Código Usuario</th>
+      <th>TOA</th>
+      <th>Autorización</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Indicador</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chopyrata of ccmtip">
+      <td>{{chopyrata.mtipotran}}</td>
+      <td>{{chopyrata.mdescrip}}</td>
+      <td>{{chopyrata.mabrevi}}</td>
+      <td>{{chopyrata.mingsal}}</td>
+      <td>{{chopyrata.mindvalor}}</td>
+      <td>{{chopyrata.mindcanti}}</td>
+      <td>{{chopyrata.mindrelac}}</td>
+      <td>{{chopyrata.mindtrnsf}}</td>
+      <td>{{chopyrata.mindsunat}}</td>
+      <td>{{chopyrata.mttransr}}</td>
+      <td>{{chopyrata.mindoper}}</td>
+      <td>{{chopyrata.mindcclte}}</td>
+      <td>{{chopyrata.mindctrla}}</td>
+      <td>{{chopyrata.mindacp}}</td>
+      <td>{{chopyrata.mcodsunat}}</td>
+      <td>{{chopyrata.mdessunat}}</td>
+      <td>{{chopyrata.mcoduser}}</td>
+      <td>{{chopyrata.msnt_toa}}</td>
+      <td>{{chopyrata.mindautis}}</td>
+      <td>{{chopyrata.mfecuact}}</td>
+      <td>{{chopyrata.mhoruact}}</td>
+      <td>{{chopyrata.mindica}}</td>
+      <td>
+        <button (click)="CopiarDatos(chopyrata)">Modificar</button>
+        <button (click)="Eliminarccmtip(chopyrata.mtipotran)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de retorno -->
+<button routerLink="/">🔙 Volver al inicio</button>
